@@ -1,0 +1,11 @@
+package com.portal.backend.repository;
+
+import com.portal.backend.entity.Dispute;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+import java.util.Optional;
+
+public interface DisputeRepository extends JpaRepository<Dispute, Long> {
+    List<Dispute> findByUserId(Long userId);
+    Optional<Dispute> findByIdempotencyKey(String idempotencyKey);
+}
