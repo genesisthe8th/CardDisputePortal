@@ -12,6 +12,7 @@ services:
     restart: unless-stopped
 
   app:
+    build: .
     image: card-dispute-portal
     ports:
       - "8080:8080"
